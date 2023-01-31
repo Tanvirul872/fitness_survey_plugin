@@ -151,3 +151,15 @@ input {
 .btn:hover {
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
 }
+
+.checkbox_div {
+  background: rgb(5, 114, 122);
+  padding: 10px 25px;
+  margin: 10px 0px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+/*.form-check-input {*/
+/*  display: none;*/
+/*}*/
