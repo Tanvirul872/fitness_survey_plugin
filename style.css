@@ -160,6 +160,7 @@ input {
   border-radius: 10px;
 }
 
-/*.form-check-input {*/
-/*  display: none;*/
-/*}*/
+
+.form-check-input {
+  display: none;
+}
