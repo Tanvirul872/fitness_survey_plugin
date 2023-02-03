@@ -45,3 +45,32 @@ function updateProgressbar() {
   progress.style.width =
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
+
+
+
+// add and remove active class to radio box
+$(".checkbox_div").click(function (e) {
+  $(this).addClass("div_active").siblings().removeClass("div_active");
+});
+
+// add and remove active class to radio box
+$(".preg_no").click(function (e) {
+  $('.preg_msg').removeClass("d-none");
+  $('.preg_div').addClass("d-none");
+}); 
+
+// add and remove active class to radio box
+$(".div_9_a").click(function (e) {
+  $('.cls_9_a').removeClass("d-none");
+  $('.div_9').addClass("d-none");
+});
+
+$(".div_9_b").click(function (e) {
+  $('.cls_9_b').removeClass("d-none");
+  $('.div_9').addClass("d-none");
+});
+
+$(".div_9_c").click(function (e) {
+  $('.cls_9_c').removeClass("d-none");
+  $('.div_9').addClass("d-none");
+});

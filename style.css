@@ -149,18 +149,29 @@ input {
   transition: 0.3s;
 }
 .btn:hover {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  box-shadow: 0 0 0 2px rgb(251, 81, 59) , 0 0 0 3px rgb(251, 81, 59);
 }
 
 .checkbox_div {
-  background: rgb(5, 114, 122);
+  background: #4f6a6cab;
   padding: 10px 25px;
   margin: 10px 0px;
   color: #fff;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 
-/* .form-check-input {
+.div_active{
+
+  background: rgb(5, 114, 122);
+}
+
+.form-check-input {
   display: none;
-} */
+}
+
+.buttton-next {
+  background: rgb(251, 81, 59) !important;
+  color: #fff !important;
+}
