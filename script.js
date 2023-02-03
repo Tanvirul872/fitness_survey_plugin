@@ -48,6 +48,61 @@ function updateProgressbar() {
 
 
 
+
+//progress bar loader js  start 
+
+/*
+Inspired by Florin Pop's coding challenges, you can check them here: https://www.florin-pop.com/blog/2019/03/weekly-coding-challenge/
+*/
+
+// add and remove active class to radio box
+$(".checkbox_div_next").click(function (e) {
+
+  alert('hello') ; 
+
+function loading() {
+  document.querySelectorAll(".bar").forEach(function(current) {
+    let startWidth = 0;
+    const endWidth = current.dataset.size;
+    
+    /* 
+    setInterval() time sholud be set as trasition time / 100. 
+    In our case, 2 seconds / 100 = 20 milliseconds. 
+    */
+    const interval = setInterval(frame, 20);
+
+    function frame() {
+      if (startWidth >= endWidth) {
+        clearInterval(interval);
+      } else {
+          startWidth++;
+          current.style.width = `${endWidth}%`;
+          current.firstElementChild.innerText = `${startWidth}%`;
+        }
+     }
+  });
+}
+
+setTimeout(loading, 1000);
+
+
+
+});
+
+
+//progress bar loader js  end 
+
+
+
+
+
+
+
+
+
+
+
+
 // add and remove active class to radio box
 $(".checkbox_div").click(function (e) {
   $(this).addClass("div_active").siblings().removeClass("div_active");
@@ -74,3 +129,55 @@ $(".div_9_c").click(function (e) {
   $('.cls_9_c').removeClass("d-none");
   $('.div_9').addClass("d-none");
 });
+
+
+$(".div_15_a").click(function (e) {
+  $('.div_15_p').removeClass("d-none");
+  $('.div_15').addClass("d-none");
+});
+
+$(".div_15_e").click(function (e) {
+  $('.div_15_p_e').removeClass("d-none");
+  $('.div_15').addClass("d-none");
+});
+
+
+$(".div_16_a").click(function (e) {
+  $('.cls_16_a').removeClass("d-none");
+  $('.div_16').addClass("d-none");
+});
+
+
+$(".div_16_b").click(function (e) {
+  $('.cls_16_b').removeClass("d-none");
+  $('.div_16').addClass("d-none");
+});
+
+
+$(".div_17_a").click(function (e) {
+  $('.cls_17_a').removeClass("d-none");
+  $('.div_17').addClass("d-none");
+});
+
+
+$(".div_17_b").click(function (e) {
+  $('.cls_17_b').removeClass("d-none");
+  $('.div_17').addClass("d-none");
+});
+
+
+$(".div_34_a").click(function (e) {
+  $('.cls_34_a').removeClass("d-none");
+  $('.div_34').addClass("d-none");
+});
+
+
+$(".div_34_b").click(function (e) {
+  $('.cls_34_b').removeClass("d-none");
+  $('.div_34').addClass("d-none");
+});
+
+
+
+
+
