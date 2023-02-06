@@ -103,6 +103,15 @@ setTimeout(loading, 1000);
 
 
 
+
+$(".buttton-next1").click(function (e) {
+
+  alert('test') ; 
+  
+  // $(this).addClass("div_active").siblings().removeClass("div_active");
+});
+
+
 // add and remove active class to radio box
 $(".checkbox_div").click(function (e) {
   $(this).addClass("div_active").siblings().removeClass("div_active");
