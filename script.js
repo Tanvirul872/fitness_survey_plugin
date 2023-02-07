@@ -1,3 +1,5 @@
+
+jQuery(document).ready(function($){
 const prevBtns = document.querySelectorAll(".btn-prev");
 const nextBtns = document.querySelectorAll(".btn-next");
 const progress = document.getElementById("progress");
@@ -45,8 +47,6 @@ function updateProgressbar() {
   progress.style.width =
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
-
-
 
 
 //progress bar loader js  start 
@@ -97,25 +97,57 @@ setTimeout(loading, 1000);
 
 
 
+$('#enquiry').submit(function (event) {
+  event.preventDefault();
 
 
+  // alert('hello') ;
 
+  var ajax_url = plugin_ajax_object.ajax_url;
+  var form = $('#enquiry').serialize();
+  var data = {
+      'action': 'send_mail_to_client',
+      'formData': form
 
+  };
 
+  $.ajax({
+      url: ajax_url,
+      type: 'post',
+      data: data,
+      success: function(response){
+         
+          // alert('success') ;
+      }
+  });
 
-
-$(".buttton-next1").click(function (e) {
-
-  alert('test') ; 
-  
-  // $(this).addClass("div_active").siblings().removeClass("div_active");
-});
+})
 
 
 // add and remove active class to radio box
 $(".checkbox_div").click(function (e) {
   $(this).addClass("div_active").siblings().removeClass("div_active");
 });
+
+
+// add and remove active class to radio box
+$(".checkbox_div2").click(function (e) {
+  $(this).toggleClass("div_active");
+});
+
+
+// $('.checkbox_div2 :checkbox').click(function() {
+//     var $this = $(this);
+//   if ($this.is(':checked')) {   
+//     $(this).prev().addClass("div_active");
+//   } else {
+    
+//     $(this).removeClass("div_active");
+//   }
+// });
+
+
+
 
 // add and remove active class to radio box
 $(".preg_no").click(function (e) {
@@ -187,6 +219,6 @@ $(".div_34_b").click(function (e) {
 });
 
 
-
+});
 
 

@@ -35,7 +35,7 @@ function plugin_css_jsscripts() {
     wp_enqueue_style( 'style-css', plugins_url( '/style.css', __FILE__ ));
 
     // JavaScript
-    wp_enqueue_script( 'script-js', plugins_url( '/script.js', __FILE__ ),array('javascript'));
+    wp_enqueue_script( 'script-js', plugins_url( '/script.js', __FILE__ ),array('jquery'));
 
     // Pass ajax_url to script.js
     wp_localize_script( 'script-js', 'plugin_ajax_object',
@@ -43,5 +43,58 @@ function plugin_css_jsscripts() {
 }
 
 
+
+// smtp details 
+
+function mailtrap($phpmailer) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host = 'smtp.mailtrap.io';
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Port = 2525;
+    // $phpmailer->Username = '6e380d75012caa';
+    // $phpmailer->Password = '3a6c7363c5dc8f';
+  }
+  
+  add_action('phpmailer_init', 'mailtrap');
+
+
+
+
+//function for send mail
+add_action( 'wp_ajax_send_mail_to_client', 'send_mail_to_client' );
+add_action( 'wp_ajax_nopriv_send_mail_to_client', 'send_mail_to_client' );
+function send_mail_to_client() {
+
+    $formdata = [];
+    wp_parse_str($_POST['formData'], $formdata); 
+
+
+    // print_r($formdata) ; 
+
+$to = 'anmtanvir872@gmai.com' ; 
+
+$subject = 'Subject';
+// $body = $formdata['temp_desc'];
+$headers[] = 'Content-type: text/html; charset=utf-8';
+$headers[] = 'From:' . "testing@gmail.com";
+
+
+    //Message
+    $message = "";
+
+    foreach ($formdata as $index => $field) {
+        $message .= '<strong>' . $index . '</strong> :' . $field . '<br/>';
+    }
+
+
+$test = wp_mail( $to , $subject, $message, $headers );
+
+ if($test){
+    echo 'send' ; 
+ }else{
+    echo 'not send' ; 
+ }
+     
+}
 
 

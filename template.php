@@ -3,6 +3,7 @@ wp_head();
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,91 +22,32 @@ wp_head();
 
   </head>
   <body>
-    <form action="#" class="form">
+    <form action="#" class="form" id="enquiry">
       <h1 class="text-center">Fitness Survey Form</h1>
-      <!-- Progress bar -->
-      <!-- <div class="progressbar">
-        <div class="progress" id="progress"></div>
-        
-        <div class="progress-step progress-step-active" data-title="Intro"></div>
-        <div class="progress-step" data-title="Contact"></div>
-        <div class="progress-step" data-title="ID"></div>
-        <div class="progress-step" data-title="4"></div>
-        <div class="progress-step" data-title="5"></div>
-        <div class="progress-step" data-title="6"></div>
-        <div class="progress-step" data-title="7"></div>
-        <div class="progress-step" data-title="8"></div>
-        <div class="progress-step" data-title="9"></div>
-
-
-        <div class="progress-step" data-title="10"></div>
-        <div class="progress-step" data-title="11"></div>
-        <div class="progress-step" data-title="12"></div>
-        <div class="progress-step" data-title="13"></div>
-        <div class="progress-step" data-title="14"></div>
-        <div class="progress-step" data-title="15"></div>
-        
-
-        <div class="progress-step" data-title="16"></div>
-        <div class="progress-step" data-title="17"></div>
-        <div class="progress-step" data-title="18"></div>
-        <div class="progress-step" data-title="19"></div>
-        <div class="progress-step" data-title="20"></div>
-        <div class="progress-step" data-title="21"></div>
-
-
-        <div class="progress-step" data-title="22"></div>
-        <div class="progress-step" data-title="23"></div>
-        <div class="progress-step" data-title="24"></div>
-        <div class="progress-step" data-title="25"></div>
-        <div class="progress-step" data-title="26"></div>
-        <div class="progress-step" data-title="27"></div>
-
-
-        <div class="progress-step" data-title="28"></div>
-        <div class="progress-step" data-title="29"></div>
-        <div class="progress-step" data-title="30"></div>
-        <div class="progress-step" data-title="31"></div>
-        <div class="progress-step" data-title="32"></div>
-        <div class="progress-step" data-title="33"></div>
-
-
-        <div class="progress-step" data-title="34"></div>
-        <div class="progress-step" data-title="35"></div>
-        <div class="progress-step" data-title="36"></div>
-        <div class="progress-step" data-title="37"></div>
-        <div class="progress-step" data-title="38"></div>
-        <div class="progress-step" data-title="39"></div>
-
-      </div> -->
-
-      <!-- Steps -->
+  
       <div class="form-step form-step-active">
-
-    
-
         <h6> How many kilogrames would you like to lose? </h6>
         <div class="form-check checkbox_div div_active">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+          <input class="form-check-input" type="radio" name="weightloss" id="weightloss" value="1-3 kg" checked>
           <label class="form-check-label" for="exampleRadios1">
               1-3 kg
           </label>
         </div>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+          <input class="form-check-input" type="radio" name="weightloss" id="weightloss" value="3-5 kg">
           <label class="form-check-label" for="exampleRadios2">
             3-5 kg
           </label>
         </div>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+          <input class="form-check-input" type="radio" name="weightloss" id="weightloss" value="5-7kg" >
           <label class="form-check-label" for="exampleRadios3">
-            5-710kg
+            5-7kg
           </label>
         </div>
 
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+          <input class="form-check-input" type="radio" name="weightloss" id="weightloss" value="10-20 kg" >
           <label class="form-check-label" for="exampleRadios3">
             10-20 kg
           </label>
@@ -113,7 +55,7 @@ wp_head();
 
 
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+          <input class="form-check-input" type="radio" name="weightloss" id="weightloss" value="20 kg or more" >
           <label class="form-check-label" for="exampleRadios3">
             20 kg or more
           </label>
@@ -121,66 +63,58 @@ wp_head();
 
 
         <div class="">
-          <a href="#" class="btn btn-next buttton-next buttton-next1 width-50 ml-auto">Next</a>
+          <a href="##" class="btn btn-next buttton-next buttton-next1 width-50 ml-auto">Next</a>
         </div>
       </div>
-
-
 
       <div class="form-step">
 
         <h6> Choose Gender </h6>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+          <input class="form-check-input" type="radio" name="choose_gender" id="exampleRadios1" value="Man" checked>
           <label class="form-check-label" for="exampleRadios1">
             Man
           </label>
         </div>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+          <input class="form-check-input" type="radio" name="choose_gender" id="exampleRadios2" value="Woman">
           <label class="form-check-label" for="exampleRadios2">
             Woman
           </label>
         </div>
 
         <div class="btns-group">
-          <a href="#" class="btn btn-prev buttton-next">Previous</a>
-          <a href="#" class="btn btn-next buttton-next">Next</a>
+          <a href="##" class="btn btn-prev buttton-next">Previous</a>
+          <a href="##" class="btn btn-next buttton-next">Next</a>
         </div>
-
 
       </div>
 
 
-      <div class="form-step">
-
-
-
+      <div class="form-step">                   
         <h6> Enter Your Weight ,Height, and name </h6>
           <div class="input-group">
-            <label for="phone">Body Height (in kg)</label>
-            <input type="text" name="phone" id="phone" />
+            <label for="p_height">Body Height (in kg)</label>
+            <input type="text" name="p_height" id="p_height" />
           </div>
           <div class="input-group">
-            <label for="email">Body Weight (in kg)</label>
-            <input type="text" name="email" id="email" />
+            <label for="p_weight">Body Weight (in kg)</label>
+            <input type="text" name="p_weight" id="p_weight" />
           </div>
 
         <div class="input-group">
-          <label for="email"> @Name </label>
-          <input type="text" name="email" id="email" />
+          <label for="p_name"> @Name </label>
+          <input type="text" name="p_name" id="p_name" />
         </div>
 
         <div class="btns-group">
-          <a href="#" class="btn btn-prev buttton-next">Previous</a>
-          <a href="#" class="btn btn-next buttton-next">Next</a>
+          <a href="##" class="btn btn-prev buttton-next">Previous</a>
+          <a href="##" class="btn btn-next buttton-next">Next</a>
         </div>
       </div>
 
 
-
       <div class="form-step">
-
 
        <h6> Great, first step done! </h6> 
        <p>Through the questionnaire, we will analyze 
@@ -192,33 +126,20 @@ wp_head();
         tailored and based on the answers we will also
         know if our program is even suitable for you, 
         as our approach is specific and may not be for 
-        everyone. </p>
+        everyone.
+       </p>
 
-
-        <!-- <div class="input-group">
-          <label for="phone">Phone</label>
-          <input type="text" name="phone" id="phone" />
-        </div>
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email" />
-        </div> -->
-
-
-
-
+       <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
         <div class="btns-group">
-          <a href="#" class="btn btn-prev buttton-next">Previous</a>
-          <a href="#" class="btn btn-next buttton-next">Next</a>
+          <a href="##"  class="btn btn-prev buttton-next">Previous</a>
+          <button href="##" type="submit" class="btn btn-next buttton-next submit_form_ajax">Next</button>
         </div>
-
-
 
       </div>
+<!-- 
+    </form>
 
-
-
-
+    <form action="#" class="form"> -->
       <div class="form-step">
 
        <h6>The questionnaire will take about 5 minutes of your time. </h6>
@@ -234,8 +155,8 @@ wp_head();
 
 
         <div class="btns-group">
-          <a href="#" class="btn btn-prev buttton-next">Previous</a>
-          <a href="#" class="btn btn-next buttton-next">Next</a>
+          <a href="##" class="btn btn-prev buttton-next">Previous</a>
+          <a href="##" class="btn btn-next buttton-next">Next</a>
         </div>
       </div>
 
@@ -275,8 +196,8 @@ wp_head();
                 </h6>
         
                 <div class="btns-group">
-                  <a href="#" class="btn btn-prev buttton-next">Previous</a>
-                  <a href="#" class="btn btn-next buttton-next">Next</a>
+                  <a href="##" class="btn btn-prev buttton-next">Previous</a>
+                  <a href="##" class="btn btn-next buttton-next">Next</a>
                 </div>
         
   
@@ -323,8 +244,8 @@ wp_head();
           </div>
 
           <div class="btns-group">
-            <a href="#" class="btn btn-prev buttton-next">Previous</a>
-            <a href="#" class="btn btn-next buttton-next">Next</a>
+            <a href="##" class="btn btn-prev buttton-next">Previous</a>
+            <a href="##" class="btn btn-next buttton-next">Next</a>
           </div>
    </div>
 
@@ -335,42 +256,42 @@ wp_head();
    <div class="form-step">
 
     <h6> 8. Was there any particular reason for the weight gain? (multiple answers possible) </h6>
-    <div class="form-check checkbox_div">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <div class="form-check checkbox_div2">
+      <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
       <label class="form-check-label" for="exampleRadios1">
          There is no particular reason
       </label>
     </div>
-    <div class="form-check checkbox_div">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+    <div class="form-check checkbox_div2">
+      <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
       <label class="form-check-label" for="exampleRadios2">
         Pregnancy
       </label>
     </div>
     
-    <div class="form-check checkbox_div">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+    <div class="form-check checkbox_div2">
+      <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
       <label class="form-check-label" for="exampleRadios2">
         Stress
       </label>
     </div> 
     
-    <div class="form-check checkbox_div">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+    <div class="form-check checkbox_div2">
+      <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
       <label class="form-check-label" for="exampleRadios2">
         Closure during Covid-19
       </label>
     </div>
 
-    <div class="form-check checkbox_div">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+    <div class="form-check checkbox_div2">
+      <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
       <label class="form-check-label" for="exampleRadios2">
          Job and responsibilities
       </label>
     </div>
 
-    <div class="form-check checkbox_div">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+    <div class="form-check checkbox_div2">
+      <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
       <label class="form-check-label" for="exampleRadios2">
          Medicines or hormonal imbalance
       </label>
@@ -378,8 +299,8 @@ wp_head();
 
 
     <div class="btns-group">
-      <a href="#" class="btn btn-prev buttton-next">Previous</a>
-      <a href="#" class="btn btn-next buttton-next">Next</a>
+      <a href="##" class="btn btn-prev buttton-next">Previous</a>
+      <a href="##" class="btn btn-next buttton-next">Next</a>
     </div>
 </div>
 
@@ -415,8 +336,8 @@ wp_head();
 
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -430,8 +351,8 @@ wp_head();
 
   <img src="https://www.shutterstock.com/image-vector/simple-infographic-line-chart-sky-260nw-534979027.jpg" height="200px" width="200px">
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -455,8 +376,8 @@ Losing weight is a personal thing and everyone is different. You have to adapt t
 
   <img src="https://www.shutterstock.com/image-vector/simple-infographic-line-chart-sky-260nw-534979027.jpg" height="200px" width="200px">
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -466,57 +387,58 @@ Losing weight is a personal thing and everyone is different. You have to adapt t
 <div class="form-step">
 
   <h6> 12. How have you approached your diet so far? (multiple answers are possible) </h6>
-  <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+  <div class="form-check checkbox_div2 ">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
     <label class="form-check-label" for="exampleRadios1">
        I didn't have a regular diet, I ate everything
     </label>
   </div>
-  <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
     <label class="form-check-label" for="exampleRadios2">
       I was eating fairly healthy, but without results
     </label>
   </div>
   
-  <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
     <label class="form-check-label" for="exampleRadios2">
       I avoided sugar and carbohydrates
     </label>
   </div>
   
-  <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
     <label class="form-check-label" for="exampleRadios2">
        I avoided fats
     </label>
   </div> 
   
-  <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
     <label class="form-check-label" for="exampleRadios2">
        I am on a diet (Write which one:____)
     </label>
+    <input type="text" class="form-control mt-2">
   </div>
   
-  <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
     <label class="form-check-label" for="exampleRadios2">
       I have already tried several diets
     </label>
   </div> 
   
-  <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
     <label class="form-check-label" for="exampleRadios2">
       I eat healthy
     </label>
   </div> 
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -553,8 +475,8 @@ Losing weight is a personal thing and everyone is different. You have to adapt t
   </div>
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -571,8 +493,8 @@ Losing weight is a personal thing and everyone is different. You have to adapt t
   </h6>
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -640,8 +562,8 @@ It is also important not to overcook potatoes and to eat them in pieces rather t
   </p>
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -679,8 +601,8 @@ It is also important not to overcook potatoes and to eat them in pieces rather t
   </p>
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -725,8 +647,8 @@ Got it, go ahead!
   </p>
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -752,8 +674,8 @@ Got it, go ahead!
   </div>
   
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -793,8 +715,73 @@ Got it, go ahead!
   </p>
   
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
+  </div>
+</div>
+
+
+
+<div class="form-step">
+  <h6> 
+    20. How have you approached exercise so far? (multiple answers are possible)  </h6>
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <label class="form-check-label" for="exampleRadios1">
+      I did strength exercises in the gym
+    </label>
+  </div>
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
+    <label class="form-check-label" for="exampleRadios2">
+      I went for walks
+    </label>
+  </div>
+
+
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
+    <label class="form-check-label" for="exampleRadios2">
+      I rode a bicycle
+    </label>
+  </div>
+
+
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
+    <label class="form-check-label" for="exampleRadios2">
+      I participated in group exercises (pilates, yoga, bootcamp,...)
+    </label>
+  </div>
+
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
+    <label class="form-check-label" for="exampleRadios2">
+      I went swimming
+    </label>
+  </div>
+
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
+    <label class="form-check-label" for="exampleRadios2">
+      I didn't exercise much
+    </label>
+  </div>
+
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="no">
+    <label class="form-check-label" for="exampleRadios2">
+      Other:
+    </label>
+    <input type="text" class="form-control mt-2">
+  </div>
+
+
+
+  
+  <div class="btns-group">
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -815,8 +802,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   </h6>
   
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -832,8 +819,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   </h6>
   
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -845,8 +832,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   </h6>
   
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -872,8 +859,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   </div>
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -884,13 +871,13 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   <h6> 
     25. What do you think is the reason that you do not manage to lose weight? (multiple answers are possible)
   </h6>
-  <div class="form-check checkbox_div">
+  <div class="form-check checkbox_div2">
     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
     <label class="form-check-label" for="exampleRadios1">
       Lack of motivation,
     </label>
   </div>
-  <div class="form-check checkbox_div">
+  <div class="form-check checkbox_div2">
     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
     <label class="form-check-label" for="exampleRadios2">
       Insufficient time and commitments,
@@ -898,7 +885,7 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   </div>
 
 
-  <div class="form-check checkbox_div">
+  <div class="form-check checkbox_div2">
     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
     <label class="form-check-label" for="exampleRadios2">
       Inefficient and inadequate programs
@@ -906,7 +893,7 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   </div>
   
   
-  <div class="form-check checkbox_div">
+  <div class="form-check checkbox_div2">
     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
     <label class="form-check-label" for="exampleRadios2">
       Other restrictions
@@ -914,8 +901,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   </div>
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -939,8 +926,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -955,8 +942,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -970,8 +957,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -981,8 +968,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
       28. Just a few more questions and we come to the end of the questionnaire!
     </p>  
   <div class="btns-group">
-    <a href="#" class="btn btn-prev buttton-next">Previous</a>
-    <a href="#" class="btn btn-next buttton-next">Next</a>
+    <a href="##" class="btn btn-prev buttton-next">Previous</a>
+    <a href="##" class="btn btn-next buttton-next">Next</a>
   </div>
 </div>
 
@@ -1017,8 +1004,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
 <div class="btns-group">
-  <a href="#" class="btn btn-prev buttton-next">Previous</a>
-  <a href="#" class="btn btn-next buttton-next">Next</a>
+  <a href="##" class="btn btn-prev buttton-next">Previous</a>
+  <a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1054,8 +1041,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
 <div class="btns-group">
-  <a href="#" class="btn btn-prev buttton-next">Previous</a>
-  <a href="#" class="btn btn-next buttton-next">Next</a>
+  <a href="##" class="btn btn-prev buttton-next">Previous</a>
+  <a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1070,35 +1057,35 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
     31. What feelings do you hope to achieve on your way to your goal? (multiple answers possible) 
   </p>  
 
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Self-confidence
         </label>
       </div>
 
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Peace
         </label>
       </div>
 
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Happiness      
         </label>
       </div>
 
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Strength      
         </label>
       </div>
 
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Gratitude      
@@ -1106,7 +1093,7 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
       </div>
       
       
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Satisfaction      
@@ -1114,7 +1101,7 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
       </div>
       
       
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Vitality      
@@ -1123,8 +1110,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
 <div class="btns-group">
-  <a href="#" class="btn btn-prev buttton-next">Previous</a>
-  <a href="#" class="btn btn-next buttton-next">Next</a>
+  <a href="##" class="btn btn-prev buttton-next">Previous</a>
+  <a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1159,8 +1146,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
       </div>
 
 <div class="btns-group">
-  <a href="#" class="btn btn-prev buttton-next">Previous</a>
-  <a href="#" class="btn btn-next buttton-next">Next</a>
+  <a href="##" class="btn btn-prev buttton-next">Previous</a>
+  <a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1174,21 +1161,21 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
     33. When I reach my goal weight I would like to… (multiple answers are possible) 
   </p>  
 
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Enjoyed food without a guilty conscience
         </label>
       </div>
 
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Thought less about food and exercise
         </label>
       </div>
 
-      <div class="form-check checkbox_div">
+      <div class="form-check checkbox_div2">
         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
         <label class="form-check-label" for="exampleRadios1">
           Worried less about her body
@@ -1196,8 +1183,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
       </div>
 
 <div class="btns-group">
-  <a href="#" class="btn btn-prev buttton-next">Previous</a>
-  <a href="#" class="btn btn-next buttton-next">Next</a>
+  <a href="##" class="btn btn-prev buttton-next">Previous</a>
+  <a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1232,8 +1219,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 </p>
 
 <div class="btns-group">
-  <a href="#" class="btn btn-prev buttton-next">Previous</a>
-  <a href="#" class="btn btn-next buttton-next">Next</a>
+  <a href="##" class="btn btn-prev buttton-next">Previous</a>
+  <a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1273,8 +1260,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
        </label>
      </div>
 <div class="btns-group">
- <a href="#" class="btn btn-prev buttton-next">Previous</a>
- <a href="#" class="btn btn-next buttton-next">Next</a>
+ <a href="##" class="btn btn-prev buttton-next">Previous</a>
+ <a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1287,45 +1274,45 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
     36. What are your doubts that make you think you can't achieve your goal? (multiple answers possible)
   </p>  
 
-   <div class="form-check checkbox_div">
-     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+   <div class="form-check checkbox_div2">
+     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
      <label class="form-check-label" for="exampleRadios1">
         Past, failed attempts
      </label>
    </div>
 
-   <div class="form-check checkbox_div">
-     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+   <div class="form-check checkbox_div2">
+     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
      <label class="form-check-label" for="exampleRadios1">
       The programs are too strict
      </label>
    </div>   
    
-   <div class="form-check checkbox_div">
-     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+   <div class="form-check checkbox_div2">
+     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
      <label class="form-check-label" for="exampleRadios1">
       Diets are not for me
      </label>
    </div>
    
-   <div class="form-check checkbox_div">
-     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+   <div class="form-check checkbox_div2">
+     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
      <label class="form-check-label" for="exampleRadios1">
       I'm out of shape
      </label>
    </div>
 
 
-   <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+   <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
     <label class="form-check-label" for="exampleRadios1">
       That I will gain the weight back again
     </label>
   </div>
 
 
-  <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+  <div class="form-check checkbox_div2">
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
     <label class="form-check-label" for="exampleRadios1">
       I am afraid that the program will be ineffective
     </label>
@@ -1334,8 +1321,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
 <div class="btns-group">
-<a href="#" class="btn btn-prev buttton-next">Previous</a>
-<a href="#" class="btn btn-next buttton-next">Next</a>
+<a href="##" class="btn btn-prev buttton-next">Previous</a>
+<a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1353,8 +1340,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
 <div class="btns-group">
-<a href="#" class="btn btn-prev buttton-next">Previous</a>
-<a href="#" class="btn btn-next buttton-next">Next</a>
+<a href="##" class="btn btn-prev buttton-next">Previous</a>
+<a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1370,8 +1357,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
 <div class="btns-group">
-<a href="#" class="btn btn-prev buttton-next">Previous</a>
-<a href="#" class="btn btn-next buttton-next checkbox_div_next">Next</a>
+<a href="##" class="btn btn-prev buttton-next">Previous</a>
+<a href="##" class="btn btn-next buttton-next checkbox_div_next">Next</a>
 </div>
 </div>
 
@@ -1400,8 +1387,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
 <div class="btns-group">
-<a href="#" class="btn btn-prev buttton-next">Previous</a>
-<a href="#" class="btn btn-next buttton-next">Next</a>
+<a href="##" class="btn btn-prev buttton-next">Previous</a>
+<a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1416,10 +1403,32 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 
 <div class="btns-group">
-<a href="#" class="btn btn-prev buttton-next">Previous</a>
-<a href="#" class="btn btn-next buttton-next">Next</a>
+<a href="##" class="btn btn-prev buttton-next">Previous</a>
+<a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
+
+
+
+<div class="form-step"> 
+  <p>
+    41.Checkout Coupon
+  </p> 
+
+  <p>
+    You are given a code for checkout.
+    this is a coupon code. 
+    Your code is - 123454
+  </p> 
+
+<div class="btns-group">
+<a href="##" class="btn btn-prev buttton-next">Previous</a>
+<a href="##" class="btn btn-next buttton-next">Next</a>
+</div>
+</div>
+
+
+
 
    <div class="form-step">
         <div class="input-group">
@@ -1435,15 +1444,17 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
           />
         </div>
         <div class="btns-group">
-          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="##" class="btn btn-prev">Previous</a>
           <input type="submit" value="Submit" class="btn" />
         </div>
       </div> 
 
-    </form>
+<!-- 
+      </form> -->
+
+   
   </body>
 </html>
-
 
 <?php
 wp_footer();

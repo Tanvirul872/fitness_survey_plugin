@@ -161,15 +161,24 @@ input {
   cursor: pointer;
 }
 
+.checkbox_div2 {
+  background: #4f6a6cab;
+  padding: 10px 25px;
+  margin: 10px 0px;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 
 .div_active{
 
   background: rgb(5, 114, 122);
 }
 
-.form-check-input {
+/* .form-check-input {
   display: none;
-}
+} */
 
 .buttton-next {
   background: rgb(251, 81, 59) !important;
@@ -257,5 +266,23 @@ input {
     font-weight: bold;
   }
 
-
 /* progress bar end */
+
+
+
+/* extra css */
+input[type="radio"] {
+  z-index: 3;
+  width: 14px;
+  height: 18px;
+  left: 24px !important;
+}
+
+
+input[type="checkbox"] {
+  z-index: 3;
+  width: 14px;
+  height: 18px;
+  left: 24px !important;
+}
+
