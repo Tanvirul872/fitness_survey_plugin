@@ -152,6 +152,7 @@ input {
   box-shadow: 0 0 0 2px rgb(251, 81, 59) , 0 0 0 3px rgb(251, 81, 59);
 }
 
+
 .checkbox_div {
   background: #4f6a6cab;
   padding: 10px 25px;
@@ -170,6 +171,9 @@ input {
   cursor: pointer;
 }
 
+/* .form-check-label{
+  cursor: pointer !important;
+} */
 
 .div_active{
 

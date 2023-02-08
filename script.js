@@ -123,30 +123,38 @@ $('#enquiry').submit(function (event) {
 
 })
 
+$(".checkbox_div").on('click', function(){
+  // alert('hello 13'); 
 
-// add and remove active class to radio box
-$(".checkbox_div").click(function (e) {
-  $(this).addClass("div_active").siblings().removeClass("div_active");
+  // var chk = $(this).find("input[type='radio']");
+  // if(chk.is(":checked") == true)
+  // {
+  //   // alert('true') ; 
+  //     // chk.prop("checked", true);
+  //     $(this).addClass('div_active');
+  //     $(this).siblings().removeClass("div_active"); 
+  // }
+ 
+
+  $(this).addClass('div_active').find('input[type=radio]').prop('checked', true);
+  $(this).siblings().removeClass("div_active"); 
+  
 });
 
 
-// add and remove active class to radio box
-$(".checkbox_div2").click(function (e) {
-  $(this).toggleClass("div_active");
+$(".checkbox_div2").click(function(){               
+  var chk = $(this).find("input[type='checkbox']");
+  if(chk.is(":checked") == false)
+  {
+      chk.prop("checked", true);
+      $(this).addClass('div_active');
+  }
+  else
+  {
+      chk.prop("checked", false);
+      $(this).removeClass('div_active');
+  }
 });
-
-
-// $('.checkbox_div2 :checkbox').click(function() {
-//     var $this = $(this);
-//   if ($this.is(':checked')) {   
-//     $(this).prev().addClass("div_active");
-//   } else {
-    
-//     $(this).removeClass("div_active");
-//   }
-// });
-
-
 
 
 // add and remove active class to radio box
