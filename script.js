@@ -117,7 +117,19 @@ $('#enquiry').submit(function (event) {
       data: data,
       success: function(response){
 
+        function getRandomCoupon(coupons) {
+          return coupons[Math.floor(Math.random() * coupons.length)];
+        }
+        const coupons = ['code1', 'code2', 'code3', 'code4', 'code5'];
+        var coupon_code = getRandomCoupon(coupons); 
+
+
         $('.bmr_people').html(response.data);
+        $('.random_coupon_code').html(coupon_code);
+
+     
+       
+        // console.log(getRandomCoupon(coupons));
       
           // alert('success') ;
       }
@@ -229,7 +241,7 @@ $(".div_19_a").click(function (e) {
 
 $(".next-chart").click(function (e) {
 
-  
+
   let randomArray = [];
   let start = 250;
   let end = 100;

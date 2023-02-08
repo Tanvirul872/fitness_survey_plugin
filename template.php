@@ -108,8 +108,11 @@ session_start();
     // echo $bmr_women = (($_SESSION['p_weight']*10) + ($_SESSION['p_height']*6.25)- (5*$_SESSION['p_height'])-16) ; 
 
       ?>
+
+
+
  
-        <h6> How many kilogrames would you like to lose? </h6>
+        <h6> How many kilogrames would you like to lose? </h6>        
         <div class="form-check checkbox_div div_active">
           <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios1" value="1-3 kg" checked>
           <label >
@@ -1545,11 +1548,22 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
   <p>
     You are given a code for checkout.
-    this is a coupon code. 
-    Your code is - 123454
-    
+    this is a coupon code.     
   </p> 
+  <h6> you coupon code is <span class="random_coupon_code">  </span> </h6> 
+    <?php 
+     
+     function check_cart_for_products() {
+      global $woocommerce;
+  
+      if ( $woocommerce->cart->is_empty() ) {
+          wp_redirect( get_permalink( wc_get_page_id( 'shop' ) ) );
+          exit;
+      }
+  }
+      echo check_cart_for_products(); 
 
+    ?>
   <h4>
     It will valid for next 15 minutues 
   </h4> 
