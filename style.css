@@ -290,3 +290,15 @@ input[type="checkbox"] {
   left: 24px !important;
 }
 
+/* chart css start */
+
+  .container-chart {
+    width: 80%;
+    margin: 15px auto;
+  }
+
+  .highcharts-title {
+    display: none;
+  }
+
+/* chart css end */

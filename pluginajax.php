@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Fitness Survey Plugin
-Plugin URI: https://anmtanvir.com/fitness_survey
+Plugin URI: https://online.sportnaklinika.si/
 description: A custom plugin which we can use to do survey on people for fitness
 Version: 1.0.0
-Author: Tanvirul Karim
-Author URI: https://anmtanvir.com/
+Author: optibull.si
+Author URI: https://online.sportnaklinika.si
 */
 
 // Add menu

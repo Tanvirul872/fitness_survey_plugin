@@ -124,17 +124,6 @@ $('#enquiry').submit(function (event) {
 })
 
 $(".checkbox_div").on('click', function(){
-  // alert('hello 13'); 
-
-  // var chk = $(this).find("input[type='radio']");
-  // if(chk.is(":checked") == true)
-  // {
-  //   // alert('true') ; 
-  //     // chk.prop("checked", true);
-  //     $(this).addClass('div_active');
-  //     $(this).siblings().removeClass("div_active"); 
-  // }
- 
 
   $(this).addClass('div_active').find('input[type=radio]').prop('checked', true);
   $(this).siblings().removeClass("div_active"); 
@@ -227,6 +216,63 @@ $(".div_34_b").click(function (e) {
 });
 
 
+$(".div_19_a").click(function (e) {
+  $('.cls_19_a').removeClass("d-none");
+  $('.div_19').addClass("d-none");
 });
 
 
+
+ 
+
+$(".next-chart").click(function (e) {
+  
+var chart = new Highcharts.Chart({
+  chart: {
+    renderTo: 'container-chart',
+    marginBottom: 80
+  },
+  xAxis: {
+    categories: ['Month 1', '', '', '', '', '', '', '', '', '', '', 'Month6'],
+    labels: {
+      rotation: 90
+    }
+  },
+
+  series: [{
+    data: [250, 200, 180, 160, 140, 120.0, 100.6, 80.5, 60.4, 80.1, 100.6, 120.4]        
+  }]
+});
+
+});
+
+
+
+$(".next-chart2").click(function (e) {
+  
+  var chart = new Highcharts.Chart({
+    chart: {
+      renderTo: 'container-chart2',
+      marginBottom: 80
+    },
+    xAxis: {
+      categories: ['Month 1', '', '', '', '', '', '', '', '', '', '', 'Month6'],
+      labels: {
+        rotation: 90
+      }
+    },
+  
+    series: [{
+      data: [250, 200, 180, 160, 140, 120.0, 100.6, 80.5, 60.4, 80.1, 100.6, 120.4]        
+    }]
+  });
+  
+  });
+
+
+});
+
+
+
+
+ 
