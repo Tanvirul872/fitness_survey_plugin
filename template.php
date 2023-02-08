@@ -2,7 +2,9 @@
 wp_head(); 
 ?>
 
-
+<?php
+session_start();
+?>
    
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,7 @@ wp_head();
 
   </head>
   <body>
-    <form action="#" class="form">
+    <form action="#" class="form" id="enquiry">
       <h1 class="text-center">Fitness Survey Form</h1>
       <!-- Progress bar -->
       <!-- <div class="progressbar">
@@ -85,28 +87,50 @@ wp_head();
 
 
       <div class="form-step form-step-active">
+
+
+      <?php
+       function get_session_in_wordpress() {
+        // Start the session if it hasn't already been started
+        if ( ! session_id() ) {
+            session_start();
+        }
+      
+        // Return the session value
+        return $_SESSION;
+    }
+
+    // print_r(get_session_in_wordpress()); 
+    
+    // $bmr_gender = $formdata['p_gender']
+
+    // echo $bmr_men = (($_SESSION['p_weight']*10) + ($_SESSION['p_height']*6.25) - (5*$_SESSION['p_age'])+5 ); 
+    // echo $bmr_women = (($_SESSION['p_weight']*10) + ($_SESSION['p_height']*6.25)- (5*$_SESSION['p_height'])-16) ; 
+
+      ?>
+ 
         <h6> How many kilogrames would you like to lose? </h6>
         <div class="form-check checkbox_div div_active">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios1" value="1-3 kg" checked>
           <label >
               1-3 kg
           </label>
         </div>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios2" value="3-5 kg">
           <label>
             3-5 kg
           </label>
         </div>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios3" value="5-7 kg" >
           <label>
             5-7kg
           </label>
         </div>
 
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios3" value="10-20 kg" >
           <label>
             10-20 kg
           </label>
@@ -114,7 +138,7 @@ wp_head();
 
 
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios3" value="20 kg or more" >
           <label>
             20 kg or more
           </label>
@@ -131,13 +155,13 @@ wp_head();
 
         <h6> Choose Gender </h6>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+          <input class="form-check-input" type="radio" name="p_gender" id="exampleRadios1" value="man">
           <label>
             Man
           </label>
         </div>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+          <input class="form-check-input" type="radio" name="p_gender" id="exampleRadios2" value="woman">
           <label>
             Woman
           </label>
@@ -158,28 +182,28 @@ wp_head();
 
         <h6> Enter Your Weight ,Height, and name </h6>
           <div class="input-group">
-            <label for="phone">Body Height (in kg)</label>
-            <input type="text" name="phone" id="phone" />
+            <label for="p_height">Body Height (in cm)</label>
+            <input type="text" name="p_height" id="p_height" />
           </div>
           <div class="input-group">
-            <label for="email">Body Weight (in kg)</label>
-            <label for="email">Body Weight (in kg)</label>
-            <input type="text" name="email" id="email" />
+            <label for="p_weight">Body Weight (in kg)</label>
+        
+            <input type="text" name="p_weight" id="p_weight" />
           </div>
 
         <div class="input-group">
-          <label for="email"> Age </label>
-          <input type="text" name="email" id="email" />
+          <label for="p_age"> Age </label>
+          <input type="text" name="p_age" id="p_age" />
         </div>
 
         <div class="input-group">
-          <label for="email"> @Name </label>
-          <input type="text" name="email" id="email" />
+          <label for="p_name"> @Name </label>
+          <input type="text" name="p_name" id="p_name" />
         </div>
 
         <div class="btns-group">
           <a href="##" class="btn btn-prev buttton-next">Previous</a>
-          <a href="##" class="btn btn-next buttton-next">Next</a>
+          <button href="##" class="btn btn-next buttton-next" value="submit">Next</button>
         </div>
       </div>
 
@@ -187,6 +211,7 @@ wp_head();
 
       <div class="form-step">
 
+    
 
        <h6> Great, first step done! </h6> 
        <p>Through the questionnaire, we will analyze 
@@ -215,7 +240,7 @@ wp_head();
 
         <div class="btns-group">
           <a href="##" class="btn btn-prev buttton-next">Previous</a>
-          <a href="##" class="btn btn-next buttton-next">Next</a>
+          <a href="##" class="btn btn-next buttton-next" value="submit">Next</a>
         </div>
 
 
@@ -1489,17 +1514,16 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
      THE LAST PROGRAM YOU WILL EVER NEED:
   </p> 
 
-  
-  
   Final report ... 
 
-  <ul> 
+   <ul> 
 
-    <li> you have to lost 5kg </li>
-    <li> Continue developing healty habits to keep the weights after reaching you goal </li>
-    <li> Feel healthier </li>
+<li> 1.Your Bmr is <span class="bmr_people"></span> </li>
+<!-- <li> you have to lost 5kg </li> -->
+<li> 2. Continue developing healty habits to keep the weights after reaching you goal </li>
+<li> 3. Feel healthier </li>
 
-  </ul>
+</ul>
 
   <div id="container-chart2" style="height: 400px; width: 300px">
     chart title 

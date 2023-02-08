@@ -101,7 +101,7 @@ $('#enquiry').submit(function (event) {
   event.preventDefault();
 
 
-  // alert('hello') ;
+  alert('hello') ;
 
   var ajax_url = plugin_ajax_object.ajax_url;
   var form = $('#enquiry').serialize();
@@ -116,7 +116,9 @@ $('#enquiry').submit(function (event) {
       type: 'post',
       data: data,
       success: function(response){
-         
+
+        $('.bmr_people').html(response.data);
+      
           // alert('success') ;
       }
   });
@@ -226,6 +228,34 @@ $(".div_19_a").click(function (e) {
  
 
 $(".next-chart").click(function (e) {
+
+  
+  let randomArray = [];
+  let start = 250;
+  let end = 100;
+  let range = start - end;
+  let step = range / 11;
+  
+  for (let i = 0; i < 12; i++) {
+    let randomNumber = start - (step * i) + Math.random() * step;
+    randomArray.push(randomNumber);
+  }
+  
+  // // console.log(randomArray);
+  // let randomArray = [];
+  // let start = 200;
+  // let range = start + 100;
+  
+  // for (let i = 0; i < 12; i++) {
+  //   let randomNumber = start + Math.random() * range;
+  //   randomArray.push(randomNumber);
+  // }
+  
+  // console.log(randomArray);
+
+  
+  
+// console.log(randomArray);
   
 var chart = new Highcharts.Chart({
   chart: {
@@ -240,7 +270,9 @@ var chart = new Highcharts.Chart({
   },
 
   series: [{
-    data: [250, 200, 180, 160, 140, 120.0, 100.6, 80.5, 60.4, 80.1, 100.6, 120.4]        
+    // data: [250, 240, 220, 200,180, 160,120 , 100, 80,100 , 110, 120.4],        
+    data: randomArray  
+     
   }]
 });
 

@@ -58,6 +58,20 @@ function mailtrap($phpmailer) {
   add_action('phpmailer_init', 'mailtrap');
 
 
+  global $wp_session;
+  $wp_session['loggedIn'] = 15;
+  
+//   echo $wp_session['loggedIn'];
+
+if (!session_id()) {
+    session_start();
+}
+
+if ( isset( $_POST['wp-submit'] ) ){
+    $_SESSION['username']= 'tanvir';
+}
+
+
 
 
 //function for send mail
@@ -71,7 +85,38 @@ function send_mail_to_client() {
 
     // print_r($formdata) ; 
 
-$to = 'anmtanvir872@gmai.com' ; 
+
+
+    // set session for calculation
+    // function set_session_in_wordpress() {
+        // Start the session if it hasn't already been started
+        if ( ! session_id() ) {
+            session_start();
+        }
+        $_SESSION = array(); 
+        // Set the session variable
+        $_SESSION['p_gender'] =  $formdata['p_gender'];
+        $_SESSION['p_height'] =  $formdata['p_height'];
+        $_SESSION['p_weight'] =  $formdata['p_weight'];
+        $_SESSION['p_age']    =  $formdata['p_age'];
+    
+        // Return the session value
+        // return $_SESSION;
+    // }
+ 
+    $bmr_men =  ($formdata['p_weight']*10) + ($formdata['p_height']*6.25) - (5*$formdata['p_age'])+5;
+
+    // $response = array(
+    //     'bmr_men' => $bmr_men,
+    //     'array_2' => array('a', 'b', 'c'),
+        
+    // );
+
+    return wp_send_json_success($bmr_men);
+
+print_r($response) ; 
+
+$to = 'anmtanvir872@gmail.com' ; 
 
 $subject = 'Subject';
 // $body = $formdata['temp_desc'];
@@ -87,6 +132,8 @@ $headers[] = 'From:' . "testing@gmail.com";
     }
 
 
+    // wp_send_json('111');
+
 $test = wp_mail( $to , $subject, $message, $headers );
 
  if($test){
@@ -94,7 +141,14 @@ $test = wp_mail( $to , $subject, $message, $headers );
  }else{
     echo 'not send' ; 
  }
+
+
+
+
      
 }
+
+
+
 
 

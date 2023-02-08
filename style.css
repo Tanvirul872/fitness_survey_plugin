@@ -301,4 +301,12 @@ input[type="checkbox"] {
     display: none;
   }
 
+  .highcharts-legend.highcharts-no-tooltip {
+    display: none;
+  }
+  
+  .highcharts-credits {
+    display: none;
+  }
+
 /* chart css end */
