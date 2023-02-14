@@ -58,7 +58,7 @@ Inspired by Florin Pop's coding challenges, you can check them here: https://www
 // add and remove active class to radio box
 $(".checkbox_div_next").click(function (e) {
 
-  alert('hello') ; 
+  // alert('hello') ; 
 
 function loading() {
   document.querySelectorAll(".bar").forEach(function(current) {
@@ -123,19 +123,66 @@ $('#enquiry').submit(function (event) {
         const coupons = ['code1', 'code2', 'code3', 'code4', 'code5'];
         var coupon_code = getRandomCoupon(coupons); 
 
-
+// alert(response.data) ; 
         $('.bmr_people').html(response.data);
         $('.random_coupon_code').html(coupon_code);
 
      
        
-        // console.log(getRandomCoupon(coupons));
+        console.log(coupon_code);
       
           // alert('success') ;
       }
   });
 
 })
+
+
+
+
+$('#store_coupon_name').submit(function (event) {
+  event.preventDefault();
+
+
+  alert('hello') ;
+
+  var ajax_url = plugin_ajax_object.ajax_url;
+  var form1 = $('#store_coupon_name').serialize();
+  var form = $('#enquiry').serialize();
+  console.log(form1) ; 
+  alert(form1) ; 
+  var data = {
+      'action': 'store_data_coupon',
+      'formData': form1
+
+  };
+
+  $.ajax({
+      url: ajax_url,
+      type: 'post',
+      data: data,
+      success: function(response){
+
+//         function getRandomCoupon(coupons) {
+//           return coupons[Math.floor(Math.random() * coupons.length)];
+//         }
+//         const coupons = ['code1', 'code2', 'code3', 'code4', 'code5'];
+//         var coupon_code = getRandomCoupon(coupons); 
+
+// // alert(response.data) ; 
+//         $('.bmr_people').html(response.data);
+//         $('.random_coupon_code').html(coupon_code);
+
+     
+       
+        console.log(coupon_code);
+      
+          // alert('success') ;
+      }
+  });
+
+});
+
 
 $(".checkbox_div").on('click', function(){
 
@@ -241,7 +288,7 @@ $(".div_19_a").click(function (e) {
 
 $(".next-chart").click(function (e) {
 
-
+// alert('hello')  ; 
   let randomArray = [];
   let start = 250;
   let end = 100;
@@ -312,6 +359,14 @@ $(".next-chart2").click(function (e) {
   });
   
   });
+
+
+  setTimeout(function() {
+    var element = document.querySelector('.random_coupon_code');
+    if (element) {
+      element.style.display = 'none';
+    }
+  }, 3000);
 
 
 });

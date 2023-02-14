@@ -8,16 +8,49 @@ Author: optibull.si
 Author URI: https://online.sportnaklinika.si
 */
 
+
+
+// Create the database table on plugin activation
+register_activation_hook(__FILE__, 'create_five_fields_table');
+function create_five_fields_table() {
+  global $wpdb;
+
+  $table_name = $wpdb->prefix . 'five_fields';
+
+  $charset_collate = $wpdb->get_charset_collate();
+
+  $sql = "CREATE TABLE $table_name (
+    id mediumint(9) NOT NULL AUTO_INCREMENT,
+    field_one varchar(255) NOT NULL,
+    field_two varchar(255) NOT NULL,
+    field_three varchar(255) NOT NULL,
+    field_four varchar(255) NOT NULL,
+    field_five varchar(255) NOT NULL,
+    PRIMARY KEY (id)
+  ) $charset_collate;";
+
+  require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+  dbDelta($sql);
+}
+
+
+
 // Add menu
 function fitness_menu() {
     add_menu_page("Fitness Survey", "Fitness Survey","manage_options", "fitness-survey", "fitness_survey",plugins_url('/pluginajax/img/icon.png'));
 }
 
+add_action("admin_menu", "fitness_menu");// Add menu
+
 add_action("admin_menu", "fitness_menu");
 
 function fitness_survey(){ 
-    include "template.php";       
+    // include "template.php";       
+    include "store_coupon.php";       
 } 
+
+
+
 
 
 function subscribe_link(){
@@ -82,14 +115,8 @@ function send_mail_to_client() {
     $formdata = [];
     wp_parse_str($_POST['formData'], $formdata); 
 
+      // print_r($formdata) ; 
 
-    // print_r($formdata) ; 
-
-
-
-    // set session for calculation
-    // function set_session_in_wordpress() {
-        // Start the session if it hasn't already been started
         if ( ! session_id() ) {
             session_start();
         }
@@ -99,18 +126,22 @@ function send_mail_to_client() {
         $_SESSION['p_height'] =  $formdata['p_height'];
         $_SESSION['p_weight'] =  $formdata['p_weight'];
         $_SESSION['p_age']    =  $formdata['p_age'];
-    
-        // Return the session value
-        // return $_SESSION;
-    // }
+        // $_SESSION['start_time'] = time();
+
+        if (!isset($_SESSION['start_time'])) {
+            $_SESSION['start_time'] = time();
+          }
+
+          $current_time = time();
+
+          if ($current_time - $_SESSION['start_time'] > 30) {
+            session_unset();
+            session_destroy();
+          }
+
  
     $bmr_men =  ($formdata['p_weight']*10) + ($formdata['p_height']*6.25) - (5*$formdata['p_age'])+5;
 
-    // $response = array(
-    //     'bmr_men' => $bmr_men,
-    //     'array_2' => array('a', 'b', 'c'),
-        
-    // );
 
     return wp_send_json_success($bmr_men);
 
@@ -132,8 +163,6 @@ $headers[] = 'From:' . "testing@gmail.com";
     }
 
 
-    // wp_send_json('111');
-
 $test = wp_mail( $to , $subject, $message, $headers );
 
  if($test){
@@ -142,12 +171,52 @@ $test = wp_mail( $to , $subject, $message, $headers );
     echo 'not send' ; 
  }
 
-
-
-
-     
 }
 
+
+
+
+
+
+
+
+//function for send mail
+add_action( 'wp_ajax_store_data_coupon', 'store_data_coupon' );
+add_action( 'wp_ajax_nopriv_store_data_coupon', 'store_data_coupon' );
+function store_data_coupon() {
+
+    $formdata = [];
+    wp_parse_str($_POST['formData'], $formdata); 
+
+    //   print_r($formdata) ;
+      
+      
+      global $wpdb;
+
+      $table_name = $wpdb->prefix . 'five_fields';
+  
+      $field_one = sanitize_text_field($formdata['field_one']);
+      $field_two = sanitize_text_field($formdata['field_two']);
+      $field_three = sanitize_text_field($formdata['field_three']);
+      $field_four = sanitize_text_field($formdata['field_four']);
+      $field_five = sanitize_text_field($formdata['field_five']);
+  
+      $wpdb->insert($table_name, array(
+        'field_one' => $field_one,
+        'field_two' => $field_two,
+        'field_three' => $field_three,
+        'field_four' => $field_four,
+        'field_five' => $field_five,
+      ));
+      
+
+
+    // return wp_send_json_success($bmr_men);
+
+
+
+
+}
 
 
 

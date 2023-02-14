@@ -86,10 +86,16 @@ session_start();
 
 
 
+
       <div class="form-step form-step-active">
 
 
+
       <?php
+
+      // echo do_shortcode(['five_fields_form']) ;
+
+
        function get_session_in_wordpress() {
         // Start the session if it hasn't already been started
         if ( ! session_id() ) {
@@ -112,9 +118,21 @@ session_start();
 
 
  
-        <h6> How many kilogrames would you like to lose? </h6>        
+        <h6> How many kilogrames would you like to lose? </h6>  
+        <?php 
+        
+        if (time() - $_SESSION['start_time'] < 30) {
+               
+          echo    'Your coupon code is code 1'; 
+
+        }else{
+         echo  'Your coupon code is expired';  
+        }
+        
+        ?>      
+              
         <div class="form-check checkbox_div div_active">
-          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios1" value="1-3 kg" checked>
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios1" value="1-3 kg">
           <label >
               1-3 kg
           </label>
@@ -214,9 +232,50 @@ session_start();
 
       <div class="form-step">
 
-    
-
+  
        <h6> Great, first step done! </h6> 
+       <h6> Great, first step done! </h6> 
+
+       <?php 
+       
+    
+       
+
+      function print_all_sessions() {
+        if (!session_id()) {
+          session_start();
+        }
+      
+        echo '<pre>';
+        print_r($_SESSION);
+        print_r(time() - $_SESSION['start_time']);
+      
+        echo '</pre>';
+      }
+      
+      add_action('wp_footer', 'print_all_sessions');
+
+      
+       ?>
+
+
+<?php 
+        
+        if (time() - $_SESSION['start_time'] < 30) { ?> 
+               
+          <h6 class="random_coupon_code"> you coupon code is <span class="random_coupon_code">  </span> </h6> 
+        <?php  }else{  
+         echo  'Your coupon code is expired';  
+        }
+        
+        ?>     
+
+
+
+       <?php 
+echo ($_SESSION['start_time']) ;  
+?>
+
        <p>Through the questionnaire, we will analyze 
         your answers and present you with the
         correct approach to weight loss. 
@@ -291,7 +350,7 @@ session_start();
                 <h6 class="preg_div"> Are you pregnant? </h6>
         
                 <div class="form-check checkbox_div preg_div">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes">
                   <label>
                     Yes
                   </label>
@@ -307,6 +366,8 @@ session_start();
                   Congratulations!👏
                   Unfortunately, Weight Loss program is not suitable for pregnant women. Please consult your doctor about weight loss during pregnancy. 
                 </h6>
+
+
         
                 <div class="btns-group">
                   <a href="##" class="btn btn-prev buttton-next">Previous</a>
@@ -323,7 +384,7 @@ session_start();
 
           <h6> Age </h6>
           <div class="form-check checkbox_div">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes">
             <label>
               30 years or less
             </label>
@@ -424,7 +485,7 @@ session_start();
 
   <h6 class="div_9">  Women [according to #7] need a slightly different approach depending on their current lifestyle. What best describes you? </h6>
   <div class="form-check checkbox_div div_9_a div_9">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes">
     <label >
        I have to do a lot on my diet and exercise
     </label>
@@ -625,7 +686,7 @@ Losing weight is a personal thing and everyone is different. You have to adapt t
      What kind of potato do you think is the healthiest?
   </h6>
   <div class="form-check checkbox_div div_15 div_15_a">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes">
     <label >
       Hot potatoes baked in the oven
     </label>
@@ -695,7 +756,7 @@ It is also important not to overcook potatoes and to eat them in pieces rather t
      Are smoothies healthy and always suitable for weight loss?
   </h6>
   <div class="form-check checkbox_div div_16 div_16_a">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes">
     <label >
      Yes
     </label>
@@ -734,7 +795,7 @@ It is also important not to overcook potatoes and to eat them in pieces rather t
      Where do you burn more calories?
   </h6>
   <div class="form-check checkbox_div div_17 div_17_a">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes">
     <label >
       In a hot environment (e.g. sauna)
     </label>
@@ -780,7 +841,7 @@ Got it, go ahead!
      Do you allow us to automatically generate your personalized 10-day menu based on the answers in the background, which you can receive as part of the program? 🎉
   </h6>
   <div class="form-check checkbox_div">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
     <label >
       Yes
     </label>
@@ -806,7 +867,7 @@ Got it, go ahead!
     Let's touch on activity and exercise. How would you rate your activity level?
   </h6>
   <div class="form-check checkbox_div div_19 div_19_a">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes">
     <label >
       I am very active and master all the exercises,
     </label>
@@ -845,7 +906,7 @@ Got it, go ahead!
   <h6> 
     How have you approached exercise so far? (multiple answers are possible)  </h6>
   <div class="form-check checkbox_div2">
-    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes">
     <label >
       I did strength exercises in the gym
     </label>
@@ -990,7 +1051,7 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
     What do you think is the reason that you do not manage to lose weight? (multiple answers are possible)
   </h6>
   <div class="form-check checkbox_div2">
-    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+    <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="yes">
     <label >
       Lack of motivation,
     </label>
@@ -1100,21 +1161,21 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
  </p>  
 
       <div class="form-check checkbox_div">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           It's true
         </label>
       </div>
 
       <div class="form-check checkbox_div">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           Sometimes
         </label>
       </div>
 
       <div class="form-check checkbox_div">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           Not really
         </label>
@@ -1137,21 +1198,21 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   </p>  
 
       <div class="form-check checkbox_div">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           It would also have a positive effect on other areas in my life
         </label>
       </div>
 
       <div class="form-check checkbox_div">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           It would not affect other areas of my life
         </label>
       </div>
 
       <div class="form-check checkbox_div">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           If you can't decide, choose the statement that is closer to you. 
         </label>
@@ -1243,21 +1304,21 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
  </p>  
 
       <div class="form-check checkbox_div">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           She likes it the same, regardless of body weight
         </label>
       </div>
 
       <div class="form-check checkbox_div">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           I prefer to reach my target weight
         </label>
       </div>
 
       <div class="form-check checkbox_div">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           If you can't decide, choose the statement that is closer to you.      
         </label>
@@ -1316,14 +1377,14 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
     </p>  
 
       <div class="form-check checkbox_div div_34 div_34_a">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           I can do it alone, without help
         </label>
       </div>
 
       <div class="form-check checkbox_div div_34 div_34_b">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
         <label >
           I need a "kick" and a program
         </label>
@@ -1351,28 +1412,28 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
    </p>  
 
      <div class="form-check checkbox_div">
-       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
        <label >
         €1,000 or more
        </label>
      </div>
 
      <div class="form-check checkbox_div">
-       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
        <label >
         €1000 - €500
        </label>
      </div>   
      
      <div class="form-check checkbox_div">
-       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
        <label >
         €500 - €300
        </label>
      </div>
      
      <div class="form-check checkbox_div">
-       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" >
        <label >
         Less than €300
        </label>
@@ -1551,22 +1612,24 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
     this is a coupon code.     
   </p> 
   <h6> you coupon code is <span class="random_coupon_code">  </span> </h6> 
-    <?php 
-     
-     function check_cart_for_products() {
-      global $woocommerce;
-  
-      if ( $woocommerce->cart->is_empty() ) {
-          wp_redirect( get_permalink( wc_get_page_id( 'shop' ) ) );
-          exit;
-      }
-  }
-      echo check_cart_for_products(); 
-
-    ?>
+ 
   <h4>
     It will valid for next 15 minutues 
   </h4> 
+
+
+  <?php 
+  
+
+  $current_time = current_time('timestamp'); // Get the current timestamp
+  $expiration_time = $current_time + 900; // Set the expiration time to 15 minutes (900 seconds) after the current time
+  if ($expiration_time <= get_post_time('U', true)) {
+    // If the expiration time has passed, remove the text
+    echo 'hello mia vai' ; 
+  }
+
+  
+  ?>
 
 <div class="btns-group">
 <a href="##" class="btn btn-prev buttton-next">Previous</a>
