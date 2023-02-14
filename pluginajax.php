@@ -45,8 +45,9 @@ add_action("admin_menu", "fitness_menu");// Add menu
 add_action("admin_menu", "fitness_menu");
 
 function fitness_survey(){ 
-    // include "template.php";       
-    include "store_coupon.php";       
+    
+    include "template.php";       
+    // include "store_coupon.php";       
 } 
 
 
@@ -194,20 +195,50 @@ function store_data_coupon() {
       global $wpdb;
 
       $table_name = $wpdb->prefix . 'five_fields';
-  
+
+
+
       $field_one = sanitize_text_field($formdata['field_one']);
       $field_two = sanitize_text_field($formdata['field_two']);
       $field_three = sanitize_text_field($formdata['field_three']);
       $field_four = sanitize_text_field($formdata['field_four']);
       $field_five = sanitize_text_field($formdata['field_five']);
-  
-      $wpdb->insert($table_name, array(
-        'field_one' => $field_one,
-        'field_two' => $field_two,
-        'field_three' => $field_three,
-        'field_four' => $field_four,
-        'field_five' => $field_five,
-      ));
+
+
+      $results = $wpdb->get_results("SELECT * FROM $table_name");
+
+      if(!empty($results)){    
+        $data = array(
+            'field_one' =>   sanitize_text_field($formdata['field_one']),
+            'field_two' =>   sanitize_text_field($formdata['field_two']),
+            'field_three' => sanitize_text_field($formdata['field_three']),
+            'field_four' =>  sanitize_text_field($formdata['field_four']),
+            'field_five' =>  sanitize_text_field($formdata['field_five']),
+          );
+
+          $where = array(
+            'id' => 1,
+          );
+          
+          $wpdb->update($table_name, $data, $where);
+
+      }else{
+       
+        $wpdb->insert($table_name, array(
+            'field_one' => $field_one,
+            'field_two' => $field_two,
+            'field_three' => $field_three,
+            'field_four' => $field_four,
+            'field_five' => $field_five,
+          ));
+          
+      }
+
+
+     
+
+
+
       
 
 

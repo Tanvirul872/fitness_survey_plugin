@@ -89,7 +89,7 @@ session_start();
 
       <div class="form-step form-step-active">
 
-
+         
 
       <?php
 
@@ -121,16 +121,28 @@ session_start();
         <h6> How many kilogrames would you like to lose? </h6>  
         <?php 
         
-        if (time() - $_SESSION['start_time'] < 30) {
+        // if (time() - $_SESSION['start_time'] < 30) {
                
-          echo    'Your coupon code is code 1'; 
+        //   echo    'Your coupon code is code 1'; 
 
-        }else{
-         echo  'Your coupon code is expired';  
-        }
-        
+        // }else{
+        //  echo  'Your coupon code is expired';  
+        // }
+          
+  global $wpdb;
+  $table_name = $wpdb->prefix . 'five_fields';
+  $results = $wpdb->get_results("SELECT * FROM $table_name");
         ?>      
               
+       
+          <input type="hidden" class="form-control" id="field_one" name="field_one" value="<?php echo $results[0]->field_one ; ?>"  >
+          <input type="hidden" class="form-control" id="field_two" name="field_two" value="<?php echo $results[0]->field_two ;?>"   >
+          <input type="hidden" class="form-control" id="field_three" name="field_three"  value="<?php echo $results[0]->field_three ;?>"   >
+          <input type="hidden" class="form-control" id="field_four" name="field_four" value="<?php echo $results[0]->field_four ;?>"   >
+          <input type="hidden" class="form-control" id="field_five" name="field_five" value="<?php echo $results[0]->field_five ;?>"   >
+
+    
+        
         <div class="form-check checkbox_div div_active">
           <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios1" value="1-3 kg">
           <label >
@@ -259,12 +271,16 @@ session_start();
        ?>
 
 
+<!-- <h6> your coupon code is: <span class="random_coupon_code">  </span> </h6>  -->
+
+
 <?php 
         
-        if (time() - $_SESSION['start_time'] < 30) { ?> 
+        if (time() - $_SESSION['start_time'] < 300) { ?> 
                
-          <h6 class="random_coupon_code"> you coupon code is <span class="random_coupon_code">  </span> </h6> 
-        <?php  }else{  
+          <h6> your coupon code is: <span class="random_coupon_code">  </span> </h6> 
+      
+      <?php  }else{  
          echo  'Your coupon code is expired';  
         }
         
@@ -272,9 +288,6 @@ session_start();
 
 
 
-       <?php 
-echo ($_SESSION['start_time']) ;  
-?>
 
        <p>Through the questionnaire, we will analyze 
         your answers and present you with the
@@ -1632,29 +1645,30 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   ?>
 
 <div class="btns-group">
-<a href="##" class="btn btn-prev buttton-next">Previous</a>
-<a href="##" class="btn btn-next buttton-next">Next</a>
-</div>
+  <a href="##" class="btn btn-prev buttton-next">Previous</a>
+  <!-- <a href="##" class="btn btn-next buttton-next">Next</a> -->
 </div>
 
-   <div class="form-step">
+</div>
+
+   <!-- <div class="form-step">
         <div class="input-group">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" />
-        </div>
-        <div class="input-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            id="confirmPassword"
-          />
-        </div>
-        <div class="btns-group">
-          <a href="##" class="btn btn-prev">Previous</a>
-          <input type="submit" value="Submit" class="btn" />
-        </div>
-      </div> 
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+      </div>
+      <div class="input-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+        />
+      </div>
+      <div class="btns-group">
+        <a href="##" class="btn btn-prev">Previous</a>
+        <input type="submit" value="Submit" class="btn" />
+      </div>
+    </div>  -->
 
     </form>
   </body>

@@ -103,6 +103,14 @@ $('#enquiry').submit(function (event) {
 
   alert('hello') ;
 
+  var field_one = $('#field_one').val(); 
+  var field_two = $('#field_two').val(); 
+  var field_three = $('#field_three').val(); 
+  var field_four = $('#field_four').val(); 
+  var field_five = $('#field_five').val(); 
+ 
+
+
   var ajax_url = plugin_ajax_object.ajax_url;
   var form = $('#enquiry').serialize();
   var data = {
@@ -120,7 +128,11 @@ $('#enquiry').submit(function (event) {
         function getRandomCoupon(coupons) {
           return coupons[Math.floor(Math.random() * coupons.length)];
         }
-        const coupons = ['code1', 'code2', 'code3', 'code4', 'code5'];
+
+
+
+        // const coupons = ['code1', 'code2', 'code3', 'code4', 'code5'];
+        const coupons = [field_one, field_two, field_three, field_four, field_five];
         var coupon_code = getRandomCoupon(coupons); 
 
 // alert(response.data) ; 
@@ -143,14 +155,9 @@ $('#enquiry').submit(function (event) {
 $('#store_coupon_name').submit(function (event) {
   event.preventDefault();
 
-
-  alert('hello') ;
-
   var ajax_url = plugin_ajax_object.ajax_url;
   var form1 = $('#store_coupon_name').serialize();
   var form = $('#enquiry').serialize();
-  console.log(form1) ; 
-  alert(form1) ; 
   var data = {
       'action': 'store_data_coupon',
       'formData': form1
@@ -163,21 +170,9 @@ $('#store_coupon_name').submit(function (event) {
       data: data,
       success: function(response){
 
-//         function getRandomCoupon(coupons) {
-//           return coupons[Math.floor(Math.random() * coupons.length)];
-//         }
-//         const coupons = ['code1', 'code2', 'code3', 'code4', 'code5'];
-//         var coupon_code = getRandomCoupon(coupons); 
-
-// // alert(response.data) ; 
-//         $('.bmr_people').html(response.data);
-//         $('.random_coupon_code').html(coupon_code);
-
-     
-       
-        console.log(coupon_code);
+        // console.log(coupon_code);
       
-          // alert('success') ;
+          alert('successfully store data') ;
       }
   });
 

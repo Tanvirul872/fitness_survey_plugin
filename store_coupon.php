@@ -24,6 +24,33 @@ session_start();
 
   </head>
   <body>
+
+
+  <?php 
+  
+  global $wpdb;
+  $table_name = $wpdb->prefix . 'five_fields';
+  $results = $wpdb->get_results("SELECT * FROM $table_name");
+
+foreach ($results as $result) {
+  echo $result->field_one;
+  echo $result->field_two;
+  
+}
+
+if(!empty($results[0])){    
+
+
+  print_r('maal ache'); 
+  
+        }else{
+          print_r('maal nai'); 
+  
+        }
+  
+  
+  ?>
+
     <form action="#" class="form" id="store_coupon_name">
       <h1 class="text-center"> Store Coupons </h1>
      
@@ -32,39 +59,31 @@ session_start();
 
   <div class="form-group">
     <label for="exampleInputEmail1"> Coupon 1 </label>
-    <input type="text" class="form-control" name="field_one" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" class="form-control" id="field_one" name="field_one" value="<?php echo $results[0]->field_one ; ?>" >
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Coupon 2</label>
-    <input type="text" class="form-control" name="field_two" id="exampleInputEmail1" aria-describedby="emailHelp" >
+    <input type="text" class="form-control" id="field_two" name="field_two" value="<?php echo $results[0]->field_two ;?>"  >
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Coupon 3</label>
-    <input type="text" class="form-control" name="field_three" id="exampleInputEmail1" aria-describedby="emailHelp" >
+    <input type="text" class="form-control" id="field_three" name="field_three"  value="<?php echo $results[0]->field_three ;?>" >
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Coupon 4</label>
-    <input type="text" class="form-control"  name="field_four" id="exampleInputEmail1" aria-describedby="emailHelp" >
+    <input type="text" class="form-control" id="field_four" name="field_four" value="<?php echo $results[0]->field_four ;?>" >
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Coupon 5</label>
-    <input type="text" class="form-control" name="field_five"  id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" class="form-control" id="field_five" name="field_five" value="<?php echo $results[0]->field_five ;?>">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 
   </div>
-
-
-
-
-
-
-
-
 
 
     </form>
