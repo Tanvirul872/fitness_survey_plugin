@@ -46,8 +46,8 @@ add_action("admin_menu", "fitness_menu");
 
 function fitness_survey(){ 
     
-    include "template.php";       
-    // include "store_coupon.php";       
+    // include "template.php";       
+    include "store_coupon.php";       
 } 
 
 

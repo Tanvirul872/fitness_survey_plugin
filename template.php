@@ -121,13 +121,13 @@ session_start();
         <h6> How many kilogrames would you like to lose? </h6>  
         <?php 
         
-        // if (time() - $_SESSION['start_time'] < 30) {
+        if (time() - $_SESSION['start_time'] < 40) {
                
-        //   echo    'Your coupon code is code 1'; 
+          echo    'Your coupon code is code 1'; 
 
-        // }else{
-        //  echo  'Your coupon code is expired';  
-        // }
+        }else{
+         echo  'Your coupon code is expired';  
+        }
           
   global $wpdb;
   $table_name = $wpdb->prefix . 'five_fields';
