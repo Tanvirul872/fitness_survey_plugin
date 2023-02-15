@@ -140,11 +140,20 @@ function send_mail_to_client() {
             session_destroy();
           }
 
- 
+          $today = new DateTime();
+          $after_two_months = $today->add(new DateInterval('P2M'));
+          $bmr_time = $after_two_months->format('jS F');
+
+    $lose_weight = $formdata['weight_loss'] ; 
     $bmr_men =  ($formdata['p_weight']*10) + ($formdata['p_height']*6.25) - (5*$formdata['p_age'])+5;
+    
+    $data = array(
+      'bmr_men' => $bmr_men,
+      'lose_weight' => $lose_weight,
+      'bmr_time' => $bmr_time,
+    ) ; 
 
-
-    return wp_send_json_success($bmr_men);
+    return wp_send_json_success($data);
 
 print_r($response) ; 
 

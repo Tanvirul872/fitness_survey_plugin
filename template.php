@@ -84,18 +84,10 @@ session_start();
 
       <!-- Steps -->
 
-
-
-
       <div class="form-step form-step-active">
 
-         
-
+        
       <?php
-
-      // echo do_shortcode(['five_fields_form']) ;
-
-
        function get_session_in_wordpress() {
         // Start the session if it hasn't already been started
         if ( ! session_id() ) {
@@ -106,12 +98,6 @@ session_start();
         return $_SESSION;
     }
 
-    // print_r(get_session_in_wordpress()); 
-    
-    // $bmr_gender = $formdata['p_gender']
-
-    // echo $bmr_men = (($_SESSION['p_weight']*10) + ($_SESSION['p_height']*6.25) - (5*$_SESSION['p_age'])+5 ); 
-    // echo $bmr_women = (($_SESSION['p_weight']*10) + ($_SESSION['p_height']*6.25)- (5*$_SESSION['p_height'])-16) ; 
 
       ?>
 
@@ -120,14 +106,13 @@ session_start();
  
         <h6> How many kilogrames would you like to lose? </h6>  
         <?php 
-        
-        if (time() - $_SESSION['start_time'] < 40) {
-               
-          echo    'Your coupon code is code 1'; 
 
-        }else{
-         echo  'Your coupon code is expired';  
-        }
+        // if (time() - $_SESSION['start_time'] < 40) {
+        //   echo    'Your coupon code is code 1'; 
+
+        // }else{
+        //  echo  'Your coupon code is expired';  
+        // }
           
   global $wpdb;
   $table_name = $wpdb->prefix . 'five_fields';
@@ -243,29 +228,29 @@ session_start();
 
 
       <div class="form-step">
-
-  
        <h6> Great, first step done! </h6> 
-       <h6> Great, first step done! </h6> 
+    
+     <!-- <ul>
+     <li> 1.Your Bmr is <span class="bmr_people"></span> </li>
+     <li> 2.You have to lost <span class="bmr_people_weight"> </span>   by <span class="bmr_people_time"> </span>  </li>
+     </ul>   -->
 
+     
        <?php 
        
-    
-       
-
-      function print_all_sessions() {
-        if (!session_id()) {
-          session_start();
-        }
+      // function print_all_sessions() {
+      //   if (!session_id()) {
+      //     session_start();
+      //   }
       
-        echo '<pre>';
-        print_r($_SESSION);
-        print_r(time() - $_SESSION['start_time']);
+      //   echo '<pre>';
+      //   print_r($_SESSION);
+      //   print_r(time() - $_SESSION['start_time']);
       
-        echo '</pre>';
-      }
+      //   echo '</pre>';
+      // }
       
-      add_action('wp_footer', 'print_all_sessions');
+      // add_action('wp_footer', 'print_all_sessions');
 
       
        ?>
@@ -1596,9 +1581,9 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
    <ul> 
 
 <li> 1.Your Bmr is <span class="bmr_people"></span> </li>
-<!-- <li> you have to lost 5kg </li> -->
-<li> 2. Continue developing healty habits to keep the weights after reaching you goal </li>
-<li> 3. Feel healthier </li>
+<li> 2.You have to lost <span class="bmr_people_weight"> </span>   by <span class="bmr_people_time"> </span> 28 october </li>
+<li> 3. Continue developing healty habits to keep the weights after reaching you goal </li>
+<li> 4. Feel healthier </li>
 
 </ul>
 
@@ -1631,18 +1616,7 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
   </h4> 
 
 
-  <?php 
-  
-
-  $current_time = current_time('timestamp'); // Get the current timestamp
-  $expiration_time = $current_time + 900; // Set the expiration time to 15 minutes (900 seconds) after the current time
-  if ($expiration_time <= get_post_time('U', true)) {
-    // If the expiration time has passed, remove the text
-    echo 'hello mia vai' ; 
-  }
-
-  
-  ?>
+ <a href="" class="btn btn-success"> Checkout page </a>
 
 <div class="btns-group">
   <a href="##" class="btn btn-prev buttton-next">Previous</a>

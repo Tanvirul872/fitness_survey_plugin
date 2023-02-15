@@ -135,15 +135,12 @@ $('#enquiry').submit(function (event) {
         const coupons = [field_one, field_two, field_three, field_four, field_five];
         var coupon_code = getRandomCoupon(coupons); 
 
-// alert(response.data) ; 
-        $('.bmr_people').html(response.data);
+        $('.bmr_people_time').html(response.data.bmr_time);
+        $('.bmr_people').html(response.data.bmr_men);
+        $('.bmr_people_weight').html(response.data.lose_weight);
         $('.random_coupon_code').html(coupon_code);
 
-     
-       
-        console.log(coupon_code);
-      
-          // alert('success') ;
+    
       }
   });
 
@@ -317,7 +314,7 @@ var chart = new Highcharts.Chart({
     marginBottom: 80
   },
   xAxis: {
-    categories: ['Month 1', '', '', '', '', '', '', '', '', '', '', 'Month6'],
+    categories: ['Month 1', '', '', '', '', '', '', '', '', '', '', 'Month4'],
     labels: {
       rotation: 90
     }
