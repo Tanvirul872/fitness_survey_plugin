@@ -27,66 +27,76 @@ session_start();
     <form action="#" class="form" id="enquiry">
       <h1 class="text-center">Fitness Survey Form</h1>
       <!-- Progress bar -->
-      <!-- <div class="progressbar">
+      <div class="progressbar">
         <div class="progress" id="progress"></div>
         
-        <div class="progress-step progress-step-active" data-title="Intro"></div>
-        <div class="progress-step" data-title="Contact"></div>
-        <div class="progress-step" data-title="ID"></div>
-        <div class="progress-step" data-title="4"></div>
-        <div class="progress-step" data-title="5"></div>
-        <div class="progress-step" data-title="6"></div>
-        <div class="progress-step" data-title="7"></div>
-        <div class="progress-step" data-title="8"></div>
-        <div class="progress-step" data-title="9"></div>
+        <div class="progress-step progress-step-active" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
 
 
-        <div class="progress-step" data-title="10"></div>
-        <div class="progress-step" data-title="11"></div>
-        <div class="progress-step" data-title="12"></div>
-        <div class="progress-step" data-title="13"></div>
-        <div class="progress-step" data-title="14"></div>
-        <div class="progress-step" data-title="15"></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
         
 
-        <div class="progress-step" data-title="16"></div>
-        <div class="progress-step" data-title="17"></div>
-        <div class="progress-step" data-title="18"></div>
-        <div class="progress-step" data-title="19"></div>
-        <div class="progress-step" data-title="20"></div>
-        <div class="progress-step" data-title="21"></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
 
 
-        <div class="progress-step" data-title="22"></div>
-        <div class="progress-step" data-title="23"></div>
-        <div class="progress-step" data-title="24"></div>
-        <div class="progress-step" data-title="25"></div>
-        <div class="progress-step" data-title="26"></div>
-        <div class="progress-step" data-title="27"></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
 
 
-        <div class="progress-step" data-title="28"></div>
-        <div class="progress-step" data-title="29"></div>
-        <div class="progress-step" data-title="30"></div>
-        <div class="progress-step" data-title="31"></div>
-        <div class="progress-step" data-title="32"></div>
-        <div class="progress-step" data-title="33"></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
 
 
-        <div class="progress-step" data-title="34"></div>
-        <div class="progress-step" data-title="35"></div>
-        <div class="progress-step" data-title="36"></div>
-        <div class="progress-step" data-title="37"></div>
-        <div class="progress-step" data-title="38"></div>
-        <div class="progress-step" data-title="39"></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
+        <div class="progress-step" data-title=""></div>
 
-      </div> -->
+  
+        <!-- <div class="progress-new">
+          <div class="progress-bar-new progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+         </div> <br> -->
+          <!-- fieldsets -->
+
+      </div>
+
+    
+
+    
 
       <!-- Steps -->
 
       <div class="form-step form-step-active">
 
-        
+
       <?php
        function get_session_in_wordpress() {
         // Start the session if it hasn't already been started
@@ -126,37 +136,43 @@ session_start();
           <input type="hidden" class="form-control" id="field_four" name="field_four" value="<?php echo $results[0]->field_four ;?>"   >
           <input type="hidden" class="form-control" id="field_five" name="field_five" value="<?php echo $results[0]->field_five ;?>"   >
 
-    
+ 
+          <div class="chart">
+  <canvas id="myChart" width="400" height="400"></canvas>
+</div>
+
+
         
-        <div class="form-check checkbox_div div_active">
-          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios1" value="1-3 kg">
+        <div class="form-check checkbox_div">
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios1" value="1-3 kg" average="2">
           <label >
               1-3 kg
           </label>
         </div>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios2" value="3-5 kg">
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios2" value="3-5 kg" average="4">
           <label>
             3-5 kg
           </label>
         </div>
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios3" value="5-7 kg" >
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios3" value="5-7 kg" average="6">
           <label>
             5-7kg
           </label>
         </div>
 
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios3" value="10-20 kg" >
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios3" value="10-20 kg" average="15">
           <label>
             10-20 kg
           </label>
         </div>
 
 
+      
         <div class="form-check checkbox_div">
-          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios3" value="20 kg or more" >
+          <input class="form-check-input" type="radio" name="weight_loss" id="exampleRadios3" value="20-30 kg" average="20">
           <label>
             20 kg or more
           </label>
@@ -235,7 +251,7 @@ session_start();
      <li> 2.You have to lost <span class="bmr_people_weight"> </span>   by <span class="bmr_people_time"> </span>  </li>
      </ul>   -->
 
-     
+
        <?php 
        
       // function print_all_sessions() {
@@ -347,13 +363,13 @@ session_start();
         
                 <h6 class="preg_div"> Are you pregnant? </h6>
         
-                <div class="form-check checkbox_div preg_div">
+                <div class="form-check checkbox_div preg_no preg_div">
                   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes">
                   <label>
                     Yes
                   </label>
                 </div>
-                <div class="form-check preg_div preg_no checkbox_div">
+                <div class="form-check preg_div checkbox_div">
                   <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
                   <label>
                     No
@@ -525,6 +541,8 @@ session_start();
   <div id="container-chart" style="height: 400px; width: 300px">
     chart title 
  </div>
+
+
 
 
   <div class="btns-group">
@@ -1535,7 +1553,7 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 <div class="btns-group">
 <a href="##" class="btn btn-prev buttton-next">Previous</a>
-<a href="##" class="btn btn-next buttton-next checkbox_div_next">Next</a>
+<a href="##" class="btn btn-next buttton-next checkbox_div_next next-chart2">Next</a>
 </div>
 </div>
 
@@ -1562,10 +1580,14 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
   </div>
 
+  <div id="container-chart2" class="container-chart2-test d-none" style="height: 400px; width: 300px">
+    chart title 
+ </div>
+
 
 <div class="btns-group">
 <a href="##" class="btn btn-prev buttton-next">Previous</a>
-<a href="##" class="btn btn-next buttton-next next-chart2">Next</a>
+<a href="##" class="btn btn-next buttton-next">Next</a>
 </div>
 </div>
 
@@ -1587,9 +1609,7 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
 
 </ul>
 
-  <div id="container-chart2" style="height: 400px; width: 300px">
-    chart title 
- </div>
+  
 
 
 <div class="btns-group">
@@ -1610,13 +1630,22 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
     this is a coupon code.     
   </p> 
   <h6> you coupon code is <span class="random_coupon_code">  </span> </h6> 
- 
+ <input type="hidden" name="rand_coupon" class="rand_coupon_code" >
   <h4>
     It will valid for next 15 minutues 
   </h4> 
 
 
- <a href="" class="btn btn-success"> Checkout page </a>
+
+<?php if (WC()->cart->is_empty()) { ?>
+<a href="<?php echo get_permalink(wc_get_page_id('shop')) ?>" class="btn btn-success"> shop </a>
+
+<?php }else{    ?>
+    
+<a href="<?php echo get_permalink(wc_get_page_id('checkout')) ?>" class="btn btn-success apply_coupon_cls"> checkout </a>
+<?php } ?>
+
+ <!-- <a href="" class="btn btn-success apply_coupon_cls"> Checkout page </a> -->
 
 <div class="btns-group">
   <a href="##" class="btn btn-prev buttton-next">Previous</a>
@@ -1650,7 +1679,8 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.angularjs.org/1.2.21/angular.js"></script>
     <script src="https://code.highcharts.com/highcharts.src.js"></script>
- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+
 </html>
 
 

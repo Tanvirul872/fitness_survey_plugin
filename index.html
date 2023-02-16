@@ -19,67 +19,80 @@
   <body>
     <form action="#" class="form">
       <h1 class="text-center">Fitness Survey Form</h1>
-      <!-- Progress bar -->
-      <!-- <div class="progressbar">
-        <div class="progress" id="progress"></div>
-        
-        <div class="progress-step progress-step-active" data-title="Intro"></div>
-        <div class="progress-step" data-title="Contact"></div>
-        <div class="progress-step" data-title="ID"></div>
-        <div class="progress-step" data-title="4"></div>
-        <div class="progress-step" data-title="5"></div>
-        <div class="progress-step" data-title="6"></div>
-        <div class="progress-step" data-title="7"></div>
-        <div class="progress-step" data-title="8"></div>
-        <div class="progress-step" data-title="9"></div>
-
-
-        <div class="progress-step" data-title="10"></div>
-        <div class="progress-step" data-title="11"></div>
-        <div class="progress-step" data-title="12"></div>
-        <div class="progress-step" data-title="13"></div>
-        <div class="progress-step" data-title="14"></div>
-        <div class="progress-step" data-title="15"></div>
-        
-
-        <div class="progress-step" data-title="16"></div>
-        <div class="progress-step" data-title="17"></div>
-        <div class="progress-step" data-title="18"></div>
-        <div class="progress-step" data-title="19"></div>
-        <div class="progress-step" data-title="20"></div>
-        <div class="progress-step" data-title="21"></div>
-
-
-        <div class="progress-step" data-title="22"></div>
-        <div class="progress-step" data-title="23"></div>
-        <div class="progress-step" data-title="24"></div>
-        <div class="progress-step" data-title="25"></div>
-        <div class="progress-step" data-title="26"></div>
-        <div class="progress-step" data-title="27"></div>
-
-
-        <div class="progress-step" data-title="28"></div>
-        <div class="progress-step" data-title="29"></div>
-        <div class="progress-step" data-title="30"></div>
-        <div class="progress-step" data-title="31"></div>
-        <div class="progress-step" data-title="32"></div>
-        <div class="progress-step" data-title="33"></div>
-
-
-        <div class="progress-step" data-title="34"></div>
-        <div class="progress-step" data-title="35"></div>
-        <div class="progress-step" data-title="36"></div>
-        <div class="progress-step" data-title="37"></div>
-        <div class="progress-step" data-title="38"></div>
-        <div class="progress-step" data-title="39"></div>
-
-      </div> -->
+        <!-- Progress bar -->
+        <div class="progressbar">
+          <div class="progress" id="progress"></div>
+          
+          <div class="progress-step progress-step-active" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+  
+  
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          
+  
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+  
+  
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+  
+  
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+  
+  
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+          <div class="progress-step" data-title=""></div>
+  
+    
+          <!-- <div class="progress-new">
+            <div class="progress-bar-new progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+           </div> <br> -->
+            <!-- fieldsets -->
+  
+        </div>
 
       <!-- Steps -->
 
 
 
       <div class="form-step form-step-active">
+
+
+        <div class="chart">
+          <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+
+
         <h6> How many kilogrames would you like to lose? </h6>
         <div class="form-check checkbox_div div_active">
           <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
@@ -433,6 +446,10 @@
   <div id="container-chart" style="height: 400px; width: 300px">
     chart title 
  </div>
+
+ <div class="chart">
+  <canvas id="myChart" width="400" height="400"></canvas>
+</div>
 
 
   <div class="btns-group">
@@ -1556,5 +1573,6 @@ Weekly schedule, 2x high-intensity strength training and 3-4x walking.
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.angularjs.org/1.2.21/angular.js"></script>
     <script src="https://code.highcharts.com/highcharts.src.js"></script>
- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+
 </html>

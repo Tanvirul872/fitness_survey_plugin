@@ -13,6 +13,10 @@ nextBtns.forEach((btn) => {
     formStepsNum++;
     updateFormSteps();
     updateProgressbar();
+    //show the next fieldset
+
+
+    setProgressBar(++current);
   });
 });
 
@@ -21,6 +25,7 @@ prevBtns.forEach((btn) => {
     formStepsNum--;
     updateFormSteps();
     updateProgressbar();
+    setProgressBar(--current);
   });
 });
 
@@ -32,6 +37,8 @@ function updateFormSteps() {
 
   formSteps[formStepsNum].classList.add("form-step-active");
 }
+
+
 
 function updateProgressbar() {
   progressSteps.forEach((progressStep, idx) => {
@@ -47,6 +54,11 @@ function updateProgressbar() {
   progress.style.width =
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
+
+
+
+
+
 
 
 //progress bar loader js  start 
@@ -73,13 +85,17 @@ function loading() {
 
     function frame() {
       if (startWidth >= endWidth) {
-        clearInterval(interval);
+        clearInterval(interval); 
+        $('.container-chart2-test').removeClass('d-none')
       } else {
           startWidth++;
           current.style.width = `${endWidth}%`;
           current.firstElementChild.innerText = `${startWidth}%`;
+        
         }
      }
+
+
   });
 }
 
@@ -139,6 +155,46 @@ $('#enquiry').submit(function (event) {
         $('.bmr_people').html(response.data.bmr_men);
         $('.bmr_people_weight').html(response.data.lose_weight);
         $('.random_coupon_code').html(coupon_code);
+        $('.rand_coupon_code').val(coupon_code);
+
+
+$(".next-chart").click(function (e) {
+
+    let randomArray = [];
+    let start = response.data.given_weight;
+    let end = response.data.last_weight;
+    let range = start - end;
+    let step = range / 11;
+    
+    for (let i = 0; i < 12; i++) {
+      let randomNumber = start - (step * i) + Math.random() * step;
+      randomArray.push(randomNumber);
+    }
+
+  // console.log(randomArray);
+    
+  var chart = new Highcharts.Chart({
+    chart: {
+      renderTo: 'container-chart',
+      marginBottom: 80
+    },
+    xAxis: {
+      categories: ['Month 1', '', '', '', '', '', '', '', '', '', '', 'Month4'],
+      labels: {
+        rotation: 90
+      }
+    },
+  
+    series: [{
+      // data: [250, 240, 220, 200,180, 160,120 , 100, 80,100 , 110, 120.4],        
+      data: randomArray  
+       
+    }]
+    
+  });
+  
+  });
+
 
     
       }
@@ -158,6 +214,38 @@ $('#store_coupon_name').submit(function (event) {
   var data = {
       'action': 'store_data_coupon',
       'formData': form1
+
+  };
+
+  $.ajax({
+      url: ajax_url,
+      type: 'post',
+      data: data,
+      success: function(response){
+
+        // console.log(coupon_code);
+      
+          alert('successfully store data') ;
+      }
+  });
+
+});
+
+
+$('.apply_coupon_cls').click(function (event) {
+  event.preventDefault();
+
+  alert('apply_coupon_cls') ;
+
+  var ajax_url = plugin_ajax_object.ajax_url;
+  
+  var coupon_code = $('.rand_coupon_code').val();
+  alert(coupon_code) ;
+
+
+  var data = {
+      'action': 'appy_data_coupon',
+      'formData': coupon_code
 
   };
 
@@ -276,57 +364,51 @@ $(".div_19_a").click(function (e) {
 
 
 
- 
 
-$(".next-chart").click(function (e) {
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+	// The type of chart we want to create
+	type: 'line', // also try bar or other graph types
 
-// alert('hello')  ; 
-  let randomArray = [];
-  let start = 250;
-  let end = 100;
-  let range = start - end;
-  let step = range / 11;
-  
-  for (let i = 0; i < 12; i++) {
-    let randomNumber = start - (step * i) + Math.random() * step;
-    randomArray.push(randomNumber);
-  }
-  
-  // // console.log(randomArray);
-  // let randomArray = [];
-  // let start = 200;
-  // let range = start + 100;
-  
-  // for (let i = 0; i < 12; i++) {
-  //   let randomNumber = start + Math.random() * range;
-  //   randomArray.push(randomNumber);
-  // }
-  
-  // console.log(randomArray);
+	// The data for our dataset
+	data: {
+		labels: ["Jun 2016", "Jul 2016", "Aug 2016", "Sep 2016", "Oct 2016", "Nov 2016", "Dec 2016", "Jan 2017", "Feb 2017", "Mar 2017", "Apr 2017", "May 2017"],
+		// Information about the dataset
+    datasets: [{
+			label: "Rainfall",
+			backgroundColor: 'lightblue',
+			borderColor: 'royalblue',
+			data: [26.4, 39.8, 66.8, 66.4, 40.6, 55.2, 77.4, 69.8, 57.8, 76, 110.8, 142.6],
+		}]
+	},
 
-  
-  
-// console.log(randomArray);
-  
-var chart = new Highcharts.Chart({
-  chart: {
-    renderTo: 'container-chart',
-    marginBottom: 80
-  },
-  xAxis: {
-    categories: ['Month 1', '', '', '', '', '', '', '', '', '', '', 'Month4'],
-    labels: {
-      rotation: 90
-    }
-  },
-
-  series: [{
-    // data: [250, 240, 220, 200,180, 160,120 , 100, 80,100 , 110, 120.4],        
-    data: randomArray  
-     
-  }]
-});
-
+	// Configuration options
+	options: {
+    layout: {
+      padding: 10,
+    },
+		legend: {
+			position: 'bottom',
+		},
+		title: {
+			display: true,
+			text: 'Precipitation in Toronto'
+		},
+		scales: {
+			yAxes: [{
+				scaleLabel: {
+					display: true,
+					labelString: 'Precipitation in mm'
+				}
+			}],
+			xAxes: [{
+				scaleLabel: {
+					display: true,
+					labelString: 'Month of the Year'
+				}
+			}]
+		}
+	}
 });
 
 

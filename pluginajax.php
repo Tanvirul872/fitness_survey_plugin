@@ -46,8 +46,8 @@ add_action("admin_menu", "fitness_menu");
 
 function fitness_survey(){ 
     
-    // include "template.php";       
-    include "store_coupon.php";       
+    include "template.php";       
+    // include "store_coupon.php";       
 } 
 
 
@@ -144,6 +144,14 @@ function send_mail_to_client() {
           $after_two_months = $today->add(new DateInterval('P2M'));
           $bmr_time = $after_two_months->format('jS F');
 
+    $range = $formdata['weight_loss'];
+    $parts = explode('-', $range);
+    $min = (float) $parts[0];
+    $max = (float) $parts[1];
+    $avg = ($min + $max) / 2;
+
+    $given_weight = $formdata['p_weight'] ; 
+    $last_weight = $formdata['p_weight'] - $avg ; 
     $lose_weight = $formdata['weight_loss'] ; 
     $bmr_men =  ($formdata['p_weight']*10) + ($formdata['p_height']*6.25) - (5*$formdata['p_age'])+5;
     
@@ -151,6 +159,8 @@ function send_mail_to_client() {
       'bmr_men' => $bmr_men,
       'lose_weight' => $lose_weight,
       'bmr_time' => $bmr_time,
+      'given_weight' => $given_weight,
+      'last_weight' => $last_weight,
     ) ; 
 
     return wp_send_json_success($data);
@@ -190,7 +200,7 @@ $test = wp_mail( $to , $subject, $message, $headers );
 
 
 
-//function for send mail
+//function for store_data_coupon
 add_action( 'wp_ajax_store_data_coupon', 'store_data_coupon' );
 add_action( 'wp_ajax_nopriv_store_data_coupon', 'store_data_coupon' );
 function store_data_coupon() {
@@ -200,13 +210,8 @@ function store_data_coupon() {
 
     //   print_r($formdata) ;
       
-      
       global $wpdb;
-
       $table_name = $wpdb->prefix . 'five_fields';
-
-
-
       $field_one = sanitize_text_field($formdata['field_one']);
       $field_two = sanitize_text_field($formdata['field_two']);
       $field_three = sanitize_text_field($formdata['field_three']);
@@ -228,11 +233,8 @@ function store_data_coupon() {
           $where = array(
             'id' => 1,
           );
-          
           $wpdb->update($table_name, $data, $where);
-
       }else{
-       
         $wpdb->insert($table_name, array(
             'field_one' => $field_one,
             'field_two' => $field_two,
@@ -243,20 +245,33 @@ function store_data_coupon() {
           
       }
 
-
-     
-
-
-
-      
-
-
     // return wp_send_json_success($bmr_men);
-
-
-
-
 }
+
+
+
+
+
+//function for appy_data_coupon
+
+add_action( 'wp_ajax_appy_data_coupon', 'appy_data_coupon' );
+add_action( 'wp_ajax_nopriv_appy_data_coupon', 'appy_data_coupon' );
+function appy_data_coupon() {
+     
+  print_r($_POST['formData']) ;
+    
+      global $woocommerce;
+  $coupon_code = $_POST['formData'] ; // replace with your actual coupon code
+  
+  if ( $woocommerce->cart->has_discount( $coupon_code ) ) {
+    return;
+  } else {
+    $woocommerce->cart->add_discount( $coupon_code );
+  }
+
+  // return wp_send_json_success($coupon_code);
+}
+add_action( 'woocommerce_before_checkout_form', 'appy_data_coupon' );
 
 
 

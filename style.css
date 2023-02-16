@@ -46,7 +46,7 @@ input {
   position: relative;
   display: flex;
   justify-content: space-between;
-  counter-reset: step;
+  /* counter-reset: step; */
   margin: 2rem 0 4rem;
 }
 
@@ -72,15 +72,15 @@ input {
   width: 2.1875rem;
   height: 2.1875rem;
   background-color: #dcdcdc;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .progress-step::before {
-  counter-increment: step;
-  content: counter(step);
+  /* counter-increment: step;
+  content: counter(step); */
 }
 
 .progress-step::after {
@@ -88,12 +88,12 @@ input {
   position: absolute;
   top: calc(100% + 0.5rem);
   font-size: 0.85rem;
-  color: #666;
+  color: #fff;
 }
 
 .progress-step-active {
   background-color: var(--primary-color);
-  color: #f3f3f3;
+  color: var(--primary-color);
 }
 
 /* Form */
@@ -289,6 +289,44 @@ input[type="checkbox"] {
   height: 18px;
   left: 24px !important;
 }
+
+
+/* 
+.progress-new {
+  height: 20px
+}
+
+.progress-bar-new {
+  background-color: #673AB7
+} */
+
+
+/* 
+.fs-title {
+  font-size: 25px;
+  color: #673AB7;
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-align: left
+}
+
+.purple-text {
+  color: #673AB7;
+  font-weight: normal
+}
+
+.steps {
+  font-size: 25px;
+  color: gray;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: right
+}
+
+.fieldlabels {
+  color: gray;
+  text-align: left
+} */
 
 /* chart css start */
 
